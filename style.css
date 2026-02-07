@@ -80,19 +80,31 @@ body {
 }
 
 /* Sidebar */
-.library {
+/* .library {
   width: 300px;
   background: #121212;
   padding: 15px;
   min-height: calc(100vh - 60px);
+} */
+
+
+.library {
+  width: 360px;           /* or whatever width you like */
+  min-width: 360px;
+  background: #121212;
+  padding: 20px;
+  height: calc(100vh - 60px);  /* full height minus navbar */
+  position: sticky;
+  top: 60px;              /* height of navbar */
+  overflow-y: auto;       /* sidebar scrolls internally if needed */
 }
 
 .library-card {
   background: #242424;
   padding: 15px;
   border-radius: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 /* .pill-btn {
@@ -127,6 +139,14 @@ body {
   color: #b3b3b3;
   text-decoration: none;
   margin-right: 10px;
+  transition: color 0.2s ease, transform 0.2s ease, text-decoration-color 0.2s ease;
+}
+ 
+
+.footer-links a:hover {
+  color: #ffffff;          /* turn white on hover */
+  text-decoration: underline; /* underline like Spotify */
+  transform: translateY(-1px); /* tiny lift effect (optional) */
 }
 
 /* Language button */
@@ -148,9 +168,15 @@ body {
 
 
 /* Main content */
+/* .music-section {
+  flex: 1;
+  padding: 20px 30px;
+} */
 .music-section {
   flex: 1;
   padding: 20px 30px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;   /* main content scrolls */
 }
 
 /* Sections */
@@ -379,6 +405,8 @@ body {
   color: #b3b3b3;
 }
 
+
+
 /* Preview bar */
 .preview-bar {
   position: fixed;
@@ -406,3 +434,64 @@ body {
   background: #e6e6e6;   /* slightly darker white */
   transform: scale(1.05); /* small zoom effect */
 }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+}
+
+.section-header a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.section-header a:hover {
+  text-decoration: underline;
+}
+
+/* Cards row */
+.card-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+/* Single card */
+.card {
+  background-color: #181818;
+  padding: 15px;
+  border-radius: 8px;
+  width: 180px;
+  flex-shrink: 0;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #282828;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+
